@@ -1,0 +1,11 @@
+1. Minimum RTO for a single AZ outage: 1 - 2 minutes
+When disater happens, RDS switches automatically to standby replica thanks to MultiAZ. The recovering time should be somewhere between 1 and 2 minutes depending on database conditions at the time being.
+
+2. Minimum RTO for a single region outage: 15 - 30 minutes
+When disater happens, we need to manually promote the read replica in standby region and update DB url. The promoting and updating time should be anywhere between 15 to 30 minutes.
+
+3. Minimum RPO for a single AZ outage: 0
+We have a sync copy from primary DB thanks to multiAZ so there won't be any data loss.
+
+4. Minimum RPO for a single region outage: 0
+There will be no data loss because we already have read replica in other region.

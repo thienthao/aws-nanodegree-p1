@@ -1,0 +1,107 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2022.05.16 21:41:11 =~=~=~=~=~=~=~=~=~=~=~=
+Using username "ec2-user".
+Authenticating with public key "primary_keypair"
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+2 package(s) needed for security, out of 5 available
+Run "sudo yum update" to apply all updates.
+]0;ec2-user@ip-10-1-10-218:~[?1034h[ec2-user@ip-10-1-10-218 ~]$ sudo yum install mysql
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+Resolving Dependencies
+--> Running transaction check
+---> Package mariadb.x86_64 1:5.5.68-1.amzn2 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package        Arch          Version                   Repository         Size
+================================================================================
+Installing:
+ mariadb        x86_64        1:5.5.68-1.amzn2          amzn2-core        8.8 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 8.8 M
+Installed size: 49 M
+Is this ok [y/d/N]: y
+Downloading packages:
+mariadb-5.5.68-1.amzn2.x86_64.rpm                          | 8.8 MB   00:00     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [                             ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [#                            ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [##                           ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [###                          ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [####                         ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [#####                        ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [######                       ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [#######                      ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [########                     ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [#########                    ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [##########                   ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [###########                  ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [############                 ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [#############                ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [##############               ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [###############              ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [################             ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [#################            ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [##################           ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [###################          ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [####################         ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [#####################        ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [######################       ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [#######################      ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [########################     ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [#########################    ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [##########################   ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [###########################  ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [############################ ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86_64                              1/1 
+  Verifying  : 1:mariadb-5.5.68-1.amzn2.x86_64                              1/1 
+
+Installed:
+  mariadb.x86_64 1:5.5.68-1.amzn2                                               
+
+Complete!
+]0;ec2-user@ip-10-1-10-218:~[ec2-user@ip-10-1-10-218 ~]$ mysql -h primarydb.c0nqx0nhrpvi.us-east-1.rds.amazo naws.com -u admin -p udacity
+Enter password: 
+(B[0;1mWelcome to the MariaDB monitor.  Commands end with ; or \g.
+(B[m(B[0;1mYour MySQL connection id is 34
+Server version: 8.0.28 Source distribution
+
+(B[m(B[0;1mCopyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+(B[m(B[0;1mType 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+(B[m[?1034hMySQL [udacity]> CREAE [K[K[KTE[K[KATE TABLE person(id INT [K, name VARCHAR(20));
+(B[0;1mQuery OK, 0 rows affected (0.08 sec)
+(B[m(B[0;1m
+(B[mMySQL [udacity]> SHOW TABLES;
++-------------------+
+| Tables_in_udacity |
++-------------------+
+| person            |
++-------------------+
+(B[0;1m1 row in set (0.01 sec)
+(B[m(B[0;1m
+(B[mMySQL [udacity]> INSERT INTO person VALUES(1, "Thao");
+(B[0;1mQuery OK, 1 row affected (0.02 sec)
+(B[m(B[0;1m
+(B[mMySQL [udacity]> INSERT INTO person VALUES(1, "Thao");[1P");[1P");u");[1P[1@2[C[C[C[C[C[C[C[C[C
+(B[0;1mQuery OK, 1 row affected (0.02 sec)
+(B[m(B[0;1m
+(B[mMySQL [udacity]> SELECT id, name FROM person;
++------+------+
+| id   | name |
++------+------+
+|    1 | Thao |
+|    2 | Thu  |
++------+------+
+(B[0;1m2 rows in set (0.00 sec)
+(B[m(B[0;1m
+(B[mMySQL [udacity]> UPDATE person SET name ='[K"uyen" WHERE id=2;
+(B[0;1mQuery OK, 1 row affected (0.01 sec)
+(B[m(B[0;1mRows matched: 1  Changed: 1  Warnings: 0
+(B[m(B[0;1m
+(B[mMySQL [udacity]> UPDATE person SET name ="uyen" WHERE id=2;[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14PSELECT id, name FROM person;
++------+------+
+| id   | name |
++------+------+
+|    1 | Thao |
+|    2 | uyen |
++------+------+
+(B[0;1m2 rows in set (0.00 sec)
+(B[m(B[0;1m
+(B[mMySQL [udacity]> S[KDELETE FROM person WHERE id = 2;
+(B[0;1mQuery OK, 1 row affected (0.01 sec)
+(B[m(B[0;1m
+(B[mMySQL [udacity]> DELETE FROM person WHERE id = 2;[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4PSELECT id, name FROM person;
++------+------+
+| id   | name |
++------+------+
+|    1 | Thao |
++------+------+
+(B[0;1m1 row in set (0.00 sec)
+(B[m(B[0;1m
+(B[mMySQL [udacity]> 
