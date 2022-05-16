@@ -1,0 +1,83 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2022.05.16 22:05:44 =~=~=~=~=~=~=~=~=~=~=~=
+Using username "ec2-user".
+Authenticating with public key "secondary_keypair"
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+2 package(s) needed for security, out of 5 available
+Run "sudo yum update" to apply all updates.
+]0;ec2-user@ip-10-2-10-158:~[?1034h[ec2-user@ip-10-2-10-158 ~]$ mysql -h secondarydb.cybqgxxib3uj.us-east-2.rds.ama zonaws.com -u admin -p udacity
+-bash: mysql: command not found
+]0;ec2-user@ip-10-2-10-158:~[ec2-user@ip-10-2-10-158 ~]$ sudo yum install mysql
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                               | 3.7 kB     00:00     
+Resolving Dependencies
+--> Running transaction check
+---> Package mariadb.x86_64 1:5.5.68-1.amzn2 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package        Arch          Version                   Repository         Size
+================================================================================
+Installing:
+ mariadb        x86_64        1:5.5.68-1.amzn2          amzn2-core        8.8 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 8.8 M
+Installed size: 49 M
+Is this ok [y/d/N]: y
+Downloading packages:
+mariadb-5.5.68-1.amzn2.x86_64.rpm                          | 8.8 MB   00:00     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [                             ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [#                            ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [##                           ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [###                          ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [####                         ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [#####                        ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [######                       ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [#######                      ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [########                     ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [#########                    ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [##########                   ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [###########                  ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [############                 ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [#############                ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [##############               ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [###############              ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [################             ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [#################            ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [##################           ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [###################          ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [####################         ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [#####################        ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [######################       ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [#######################      ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [########################     ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [#########################    ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [##########################   ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [###########################  ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86 [############################ ] 1/1  Installing : 1:mariadb-5.5.68-1.amzn2.x86_64                              1/1 
+  Verifying  : 1:mariadb-5.5.68-1.amzn2.x86_64                              1/1 
+
+Installed:
+  mariadb.x86_64 1:5.5.68-1.amzn2                                               
+
+Complete!
+]0;ec2-user@ip-10-2-10-158:~[ec2-user@ip-10-2-10-158 ~]$ sudo yum install mysqlmysql -h secondarydb.cybqgxxib3uj.us-east-2.rds.amazzonaws.com -u admin -p udacity
+Enter password: 
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+(B[0;1mWelcome to the MariaDB monitor.  Commands end with ; or \g.
+(B[m(B[0;1mYour MySQL connection id is 28
+Server version: 8.0.28 Source distribution
+
+(B[m(B[0;1mCopyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+(B[m(B[0;1mType 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+(B[m[?1034hMySQL [udacity]> SHOW TABLES:[K;
++-------------------+
+| Tables_in_udacity |
++-------------------+
+| person            |
++-------------------+
+(B[0;1m1 row in set (0.00 sec)
+(B[m(B[0;1m
+(B[mMySQL [udacity]> SELECT name[K[K[K[Kid, name FROM person;
++------+------+
+| id   | name |
++------+------+
+|    1 | Thao |
++------+------+
+(B[0;1m1 row in set (0.01 sec)
+(B[m(B[0;1m
+(B[mMySQL [udacity]> INSERT INTO person WHERE [K[K[K[K[K[KVALUES("[K1[K2, "Thuy");
+ERROR 1290 (HY000): The MySQL server is running with the --read-only option so it cannot execute this statement
+(B[0;7m(B[mMySQL [udacity]> INSERT INTO person VALUES(2, "Thuy");[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[KUPDATE person SET na m[K[Kme ="Thij[Knh:[K" WHERE id=1;
+ERROR 1290 (HY000): The MySQL server is running with the --read-only option so it cannot execute this statement
+(B[0;7m(B[mMySQL [udacity]> 

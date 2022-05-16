@@ -1,0 +1,78 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2022.05.16 22:21:16 =~=~=~=~=~=~=~=~=~=~=~=
+Using username "ec2-user".
+Authenticating with public key "secondary_keypair"
+Last login: Mon May 16 15:19:21 2022 from 171.239.128.104
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+2 package(s) needed for security, out of 5 available
+Run "sudo yum update" to apply all updates.
+]0;ec2-user@ip-10-2-10-158:~[?1034h[ec2-user@ip-10-2-10-158 ~]$ mysql -h secondarydb.cybqgxxib3uj.us-east-2.rds.ama zonaws.com -u admin -p udacity
+Enter password: 
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+(B[0;1mWelcome to the MariaDB monitor.  Commands end with ; or \g.
+(B[m(B[0;1mYour MySQL connection id is 12
+Server version: 8.0.28 Source distribution
+
+(B[m(B[0;1mCopyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+(B[m(B[0;1mType 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+(B[m[?1034hMySQL [udacity]> SHOW TABLES;
++-------------------+
+| Tables_in_udacity |
++-------------------+
+| person            |
++-------------------+
+(B[0;1m1 row in set (0.01 sec)
+(B[m(B[0;1m
+(B[mMySQL [udacity]> E[KSELECT * FROM person;
++------+------+
+| id   | name |
++------+------+
+|    1 | Thao |
++------+------+
+(B[0;1m1 row in set (0.00 sec)
+(B[m(B[0;1m
+(B[mMySQL [udacity]> INSERT INTO person VALUES(2, "T[KOng");
+(B[0;1mQuery OK, 1 row affected (0.01 sec)
+(B[m(B[0;1m
+(B[mMySQL [udacity]> S[KINSERT INTO person VALUES(2, "Ong");[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15PSELECT * FROM person;
++------+------+
+| id   | name |
++------+------+
+|    1 | Thao |
+|    2 | Ong  |
++------+------+
+(B[0;1m2 rows in set (0.00 sec)
+(B[m(B[0;1m
+(B[mMySQL [udacity]> UPDATE person SET name+"T[K[K[K[Ke="Thanh" WHERE id=2;
+(B[0;1mQuery OK, 1 row affected (0.01 sec)
+(B[m(B[0;1mRows matched: 1  Changed: 1  Warnings: 0
+(B[m(B[0;1m
+(B[mMySQL [udacity]> UPDATE person SET name="Thanh" WHERE id=2;[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[KUPDATE person SET name="Thanh" WHERE id=2;[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[21PSELECT * FROM person;
++------+-------+
+| id   | name  |
++------+-------+
+|    1 | Thao  |
+|    2 | Thanh |
++------+-------+
+(B[0;1m2 rows in set (0.00 sec)
+(B[m(B[0;1m
+(B[mMySQL [udacity]> DELETE FROM person WHERE id = 2;
+(B[0;1mQuery OK, 1 row affected (0.01 sec)
+(B[m(B[0;1m
+(B[mMySQL [udacity]> DELETE FROM person WHERE id = 2;[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[11PSELECT * FROM person;
++------+------+
+| id   | name |
++------+------+
+|    1 | Thao |
++------+------+
+(B[0;1m1 row in set (0.00 sec)
+(B[m(B[0;1m
+(B[mMySQL [udacity]> 
